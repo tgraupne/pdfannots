@@ -39,6 +39,21 @@ identify to which section in the document the annotation refers.
 See `pdfannots --help` (in a source tree: `pdfannots.py --help`) for
 options and invocation.
 
+#### Docker Image
+
+One can build the docker image by executing:
+
+```
+docker build -t pdfannots .
+```
+
+An image build with this command can be used as follows, with the interesting pdf located in the current working dir:
+
+```
+docker run -v $(pwd):/tmp -w /tmp pdfannots hotos17.pdf -o hotos17.md
+```
+
+The resulting markdown file will be created in the same directory.
 
 ### Dependencies
 
